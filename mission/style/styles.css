@@ -1,7 +1,8 @@
-body {
+.mission {
     font-family:'Times New Roman', Times, serif;
     max-width: 80%;
     margin: auto;
+    border: 2px solid black;
 }
 
 h1 {
@@ -20,16 +21,21 @@ hr {
     margin-top: 4px;
     background-color: gold;
     height: 1px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 p {
     font-size: 24px;
+    margin: 50px;
 }
 
 #list li {
     font-size: 18px;
     list-style: decimal;
     padding-top: 1.5em;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 img {
