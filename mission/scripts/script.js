@@ -15,7 +15,7 @@ let byui = document.querySelector("h2");
 function changeTheme() {
     let current = selectElem.value;
     if (current === 'dark') {
-        document.body.style.backgroundColor = "#404040";
+        document.body.style.backgroundColor = "#333";
         document.body.style.color = "white";
         image.setAttribute("src", "images/byui-logo-white.png");
         mission.style.borderColor =  "white"; 
