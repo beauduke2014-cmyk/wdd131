@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+}
+
+nav {
+    border-top: 2px solid gold;
+    border-bottom: 2px solid gold;
+    padding: 1em;
+    text-align: right;
+}
+
+nav a {
+    text-decoration: none;
+    color: #990309;
+    margin-right: 20px;
+}
+
+.book {
+    border-top: 2px solid gold;
+    margin-top: 50px;
+}
+
+.about-book {
+    text-align: right;
+    padding-right: 3em;
+}
+
+.info-book {
+    margin: 3em;
+}
+
+.book h2 {
+    color: #990309;
+}
+
+footer {
+    border-top: 2px solid gold;
+    text-align: center;
+}
+
+@media (min-width: 700px) {
+    .book {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        border-top: none;
+        margin-top: 0;
+    }
+
+    .about-book {
+        border-right: 2px solid gold;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .info-book img {
+        margin-left: 15%
+    }
+}
