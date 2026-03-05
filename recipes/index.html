@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta author="Carter Weber">
-    <meta description="A website with recipes to give people ideas on what they would like to cook.">
+    <meta name="author" content="Carter Weber">
+    <meta name="description" content="A website with recipes to give people ideas on what they would like to cook.">
     
     <!-- Open Graph (Facebook, LinkedIn, etc.) -->
     <meta property="og:type" content="website">
@@ -25,24 +25,44 @@
     <!-- One Apple Touch Icon (iOS home screen) -->
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     <title>Recipe Book</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <img src="images/recipe-book.png" alt="Recipe Book Icon">
-    <h1>Recipe Book</h1>
-    <div class="search">
+    <nav>
+        <div class="title">
+            <img src="images/recipe-book.png" alt="Recipe Book Icon">
+            <h1>Recipe Book</h1>
+        </div>
         
-    </div>
-    <span
-    class="rating"
-    role="img"
-    aria-label="Rating: 4 out of 5 stars"
-    >
-        <span aria-hidden="true" class="icon-star">⭐</span>
-        <span aria-hidden="true" class="icon-star">⭐</span>
-        <span aria-hidden="true" class="icon-star">⭐</span>
-        <span aria-hidden="true" class="icon-star">⭐</span>
-        <span aria-hidden="true" class="icon-star-empty">☆</span>
-    </span>
+        <div class="search">
+            <input type="text" id="recipe-search" placeholder="Find a recipe">
+            <img src="images/search.svg" alt="Search Symbol">
+        </div>
+    </nav>
+    <main>
+        <div class="recipe">
+            <img src="images/apple-crisp.jpg" alt="Apple Crisp">
+            <div class="food-info">
+                <p class="food-classification">dessert</p>
+                <h2>Apple Crisp</h2>
+                <span
+                class="rating"
+                role="img"
+                aria-label="Rating: 4 out of 5 stars"
+                >
+                    <span aria-hidden="true" class="icon-star">⭐</span>
+                    <span aria-hidden="true" class="icon-star">⭐</span>
+                    <span aria-hidden="true" class="icon-star">⭐</span>
+                    <span aria-hidden="true" class="icon-star">⭐</span>
+                    <span aria-hidden="true" class="icon-star-empty">☆</span>
+                </span>
+                <p class="hide">This apple crisp recipe is a simple yet delicious fall desert that's great served warm with vanilla ice cream.</p>
+            </div>
+            
+        </div>
+    </main>
+    
+    
     <footer>
         <a href="https://www.flaticon.com/free-icons/recipe" title="recipe icons">Recipe icons created by Freepik - Flaticon</a>
         <div class="social">
