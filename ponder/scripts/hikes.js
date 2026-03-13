@@ -98,14 +98,14 @@ function search() {
         return 1;
     }
     return 0;
-    }
+  }
 
-    hikeContainer.innerHTML='';
-    sortedHikes.forEach(function(hike) {
-      renderHike(hike);
-    });
+  hikeContainer.innerHTML='';
+  sortedHikes.forEach(function(hike) {
+    renderHike(hike);
+  });
   
-    console.log(sortedHikes);
+  console.log(sortedHikes);
 }
 
 let randomNum = Math.floor(Math.random() * hikes.length);
@@ -135,15 +135,15 @@ function difficultyTemplate(rating) {
 
 function hikesTemplate(hike) {
     return `<div class="hike-card">
-  <div class="hike-content">
-    <h2>${hike.name}</h2>
-    <div class="hike-tags">
-      ${tagTemplate(hike.tags)}
+    <div class="hike-content">
+      <h2>${hike.name}</h2>
+      <div class="hike-tags">
+        ${tagTemplate(hike.tags)}
+      </div>
+      <p>${hike.description}</p>
+      <p>${difficultyTemplate(hike.difficulty)}</p>
     </div>
-    <p>${hike.description}</p>
-    <p>${difficultyTemplate(hike.difficulty)}</p>
-  </div>
-</div>`
+  </div>`
 }
 
 function renderHike(hike) {
