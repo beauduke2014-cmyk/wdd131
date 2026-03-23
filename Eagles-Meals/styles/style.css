@@ -1,1 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+* {
+    margin: 0;
+}
+nav {
+    display:flex;
+    background-color: #CDE7B0;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+nav img {
+    width: 200px;
+    height: auto;
+}
+
+.links {
+    margin: 5px;
+    width: 300px;
+    
+}
+
+.links a {
+    font-size: 1.25em;
+    margin-right: 15%;
+    text-decoration: none;
+    color: #226F54;
+    padding: 10px;
+}
+
+.links a:hover {
+    color: #FFF4E9;
+    background-color: #226F54;
+    font-size: 1.26em;
+}
+
+.hero img {
+    max-width: 100%;
+    height: auto;
+}
