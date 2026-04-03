@@ -8,6 +8,17 @@ nav {
     align-items: baseline;
     justify-content: space-between;
 }
+body {
+    background-color: #FFF4E9;
+}
+
+p, li {
+    color: #8D6346;
+}
+
+h1, h2, h3 {
+    color: #226F54;
+}
 
 nav img {
     width: 200px;
@@ -34,7 +45,74 @@ nav img {
     font-size: 1.26em;
 }
 
+.hero {
+    text-align: center;
+    position: relative;
+}
+
 .hero img {
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
+    position: relative;
+}
+
+.hero h1 {
+    position: absolute;
+    left: 40%;
+    top: 30%;
+    color: #CDE7B0;
+}
+.hero p {
+    position: absolute;
+    left: 40%;
+    top: 60%;
+    color: #CDE7B0;
+}
+
+main h2, main p, main h3 {
+    text-align: center;
+    margin: 5px;
+}
+
+li {
+    margin: 10px;
+}
+
+footer {
+    background-color: #CDE7B0;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+}
+
+footer img {
+    height: 100px;
+    width: auto;
+}
+
+.social {
+    display: flex;
+
+}
+
+.social a:hover {
+    background-color: #226F54;
+}
+
+footer a img{
+    height: 50px;
+    width: auto;
+}
+
+@media (min-width: 800px) {
+    .hero h1 {
+        left: 43%;
+        top: 30%;
+        font-size: 3em;
+    }
+    .hero p {
+        left: 42.5%;
+        top: 60%;
+        font-size: 1.5em;
+    }
 }
