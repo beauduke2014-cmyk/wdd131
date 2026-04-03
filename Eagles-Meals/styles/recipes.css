@@ -1,0 +1,35 @@
+h1 {
+    text-align: center;
+}
+
+.search {
+    display: flex;
+    max-height: 50px;
+}
+
+.search img {
+    height: 50px;
+    width: auto;
+}
+
+.search input {
+    width: 90%;
+    margin-left: 5px;
+}
+
+.weekly_planner {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 5px;
+}
+
+.sunday, .monday, .tuesday, .wednesday, .thursday, .friday, .saturday {
+    border: 2px solid #8D6346;
+    height: 100px;
+    margin-bottom: 5px;
+}
+
+.sunday button, .monday button, .tuesday button, .wednesday button, .thursday button, .friday button, .saturday button {
+    margin-top: 40px;
+    margin-left: 40%;
+}
