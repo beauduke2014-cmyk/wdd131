@@ -33,3 +33,9 @@ h1 {
     margin-top: 40px;
     margin-left: 40%;
 }
+
+@media (min-width: 800px) {
+    .weekly_planner {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+}

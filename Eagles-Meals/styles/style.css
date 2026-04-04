@@ -92,7 +92,10 @@ footer img {
 
 .social {
     display: flex;
+}
 
+.social a {
+    margin-right: 5px;
 }
 
 .social a:hover {
