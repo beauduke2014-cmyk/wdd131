@@ -1,7 +1,7 @@
 const recipes = [
     {
         name: "Sweet and Sour Chicken",
-        cookTime: "80 mins",
+        cookTime: 80,
         servings: "6-8 servings",
         ingredients: [
             "2-3 lbs, frying chicken",
@@ -35,7 +35,7 @@ const recipes = [
     },
     {
         name: "Peanut Butter Cookies",
-        cookTime:"20 mins",
+        cookTime:20,
         servings:"7 dozen",
         ingredients:[
             "4 cups basic cookie mix",
@@ -54,7 +54,7 @@ const recipes = [
     },
     {
         name: "Fruit Cocktail Dessert",
-        cookTime: "50 mins",
+        cookTime: 50,
         servings: "8-10 servings",
         ingredients: [
             "1 cup flour",
@@ -75,7 +75,7 @@ const recipes = [
     },
     {
         name: "Rice Beef Stew",
-        cookTime: "170 mins",
+        cookTime: 170,
         servings: "8 servings",
         ingredients: [
             "1/2 cup flour",
@@ -109,7 +109,7 @@ const recipes = [
     },
     {
         name: "Scalloped Potatoes",
-        cookTime: "75 mins",
+        cookTime: 75,
         servings: "6 servings",
         ingredients: [
             "6 raw potatoes",
@@ -131,7 +131,7 @@ const recipes = [
     },
     {
         name: "Tuna Salad",
-        cookTime: "20 mins",
+        cookTime: 20,
         servings: "6 servings",
         ingredients: [
             "1 cup uncooked macaroni noodles",
@@ -151,3 +151,117 @@ const recipes = [
     }
 
 ]
+
+const weeklyRecipes = {
+    sunday: [],
+    monday: [],
+    tuesday: [],
+    wednesday: [],
+    thursday: [],
+    friday: [],
+    saturday: []
+}
+
+let recipeContainer = document.querySelector('.recipe');
+let input = document.querySelector('#recipe-search');
+let searchButton = document.querySelector('.search');
+
+searchButton.addEventListener('click', search);
+
+function search() {
+    let recipeSearch = input.value;
+    let maxTime = parseInt(recipeSearch);
+
+    let filteredRecipes = recipes.filter(function(recipe) {
+        let matchesText =
+            recipe.name.toLowerCase().includes(recipeSearch.toLowerCase()) ||
+            recipe.servings.toLowerCase().includes(recipeSearch.toLowerCase()) ||
+            recipe.steps.find(step => step.toLowerCase().includes(recipeSearch.toLowerCase())) ||
+            recipe.ingredients.find(ingredient => ingredient.toLowerCase().includes(recipeSearch.toLowerCase()))
+        let matchesTime = !isNaN(maxTime) ? recipe.cookTime <= maxTime : false;
+
+        return matchesText || matchesTime;
+    })
+    console.log(filteredRecipes);
+
+    recipeContainer.innerHTML = '';
+    filteredRecipes.forEach(function(recipe) {
+        renderRecipe(recipe);
+    })
+}
+
+let randomNum = Math.floor(Math.random() * recipes.length);
+
+console.log(randomNum);
+
+function listTemplate(list) {
+    return list.map((item) => `<li>${item}</li>`).join(" ");
+}
+
+function recipesTemplate(recipes) {
+    return `
+            <h2>${recipes.name}</h2>
+            <p>Cook time: ${recipes.cookTime} mins</p>
+            <p>Servings: ${recipes.servings}</p>
+            <hr>
+            <h3>Ingredients</h3>
+            <ul>
+                ${listTemplate(recipes.ingredients)}
+            </ul>
+            <hr>
+            <h3>Recipe</h3>
+            <ul>
+                ${listTemplate(recipes.steps)}
+            </ul>
+    `
+}
+
+function renderRecipe(recipe) {
+    let html = recipesTemplate(recipe);
+    recipeContainer.innerHTML += html
+}
+
+function setupDayButton(dayClass) {
+    const container = document.querySelector(`.${dayClass}`);
+    const button = container.querySelector("button");
+
+    button.addEventListener("click", function () {
+        const recipeName = prompt(`Enter a recipe for ${dayClass}:`);
+        if (recipeName && recipeName.trim() !== "") {
+            weeklyRecipes[dayClass].push(recipeName.trim());
+
+            renderDay(container, weeklyRecipes[dayClass]);
+        }
+    });
+}
+
+function renderDay(container, recipes) {
+    let ul = container.querySelector("ul");
+
+    if (!ul) {
+        ul = document.createElement("ul");
+        container.appendChild(ul);
+    }
+
+    ul.innerHTML = "";
+
+    recipes.forEach(recipe => {
+        const li = document.createElement("li");
+        li.textContent = recipe;
+        ul.appendChild(li);
+    });
+}
+
+setupDayButton("sunday");
+setupDayButton("monday");
+setupDayButton("tuesday");
+setupDayButton("wednesday");
+setupDayButton("thursday");
+setupDayButton("friday");
+setupDayButton("saturday");
+
+function init() {
+    renderRecipe(recipes[randomNum]);
+}
+
+init();

@@ -25,13 +25,16 @@ h1 {
 
 .sunday, .monday, .tuesday, .wednesday, .thursday, .friday, .saturday {
     border: 2px solid #8D6346;
-    height: 100px;
+    min-height: 100px;
     margin-bottom: 5px;
 }
 
 .sunday button, .monday button, .tuesday button, .wednesday button, .thursday button, .friday button, .saturday button {
-    margin-top: 40px;
     margin-left: 40%;
+}
+
+.sunday ul li, .monday ul li, .tuesday ul li, .wednesday ul li, .thursday ul li, .friday ul li, .saturday ul li {
+    font-size: 1em;
 }
 
 @media (min-width: 800px) {
